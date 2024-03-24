@@ -1,0 +1,394 @@
+<div
+  class="modal fade"
+  id="mmpSettings"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="text-center">雀魂Mod_Plus设置</h3>
+        <object
+          id="version"
+          style="padding-left: 0.5rem"
+          height="100%"
+          data=""
+          width="200px"
+        ></object>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <dl class="row">
+              <dt class="col-sm-5">自定义名称</dt>
+              <dd class="col-sm-7">
+                <input
+                  id="nickname"
+                  type="text"
+                  class="form-control rounded-3"
+                  placeholder="留空则关闭该功能"
+                />
+              </dd>
+              <dt class="col-sm-5">开局后自动设置指定状态</dt>
+              <dd class="col-sm-7">
+                <div class="form-check form-switch">
+                  <input
+                    id="isSetAuto"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    data-bs-target="#setAuto"
+                    data-bs-toggle="collapse"
+                  />
+                </div>
+                <div id="setAuto" class="collapse">
+                  <ul class="list-group">
+                    <li class="list-group-item rounded-3">
+                      <dl
+                        class="row"
+                        style="margin-bottom: calc(-0.5 * var(--bs-gutter-x))"
+                      >
+                        <dt class="col-5">自动理牌</dt>
+                        <dd class="col-7">
+                          <div class="form-check form-switch">
+                            <input
+                              id="setAutoLiPai"
+                              class="form-check-input"
+                              type="checkbox"
+                              role="switch"
+                            />
+                          </div>
+                        </dd>
+                        <dt class="col-5">自动和了</dt>
+                        <dd class="col-7">
+                          <div class="form-check form-switch">
+                            <input
+                              id="setAutoHule"
+                              class="form-check-input"
+                              type="checkbox"
+                              role="switch"
+                            />
+                          </div>
+                        </dd>
+                        <dt class="col-5">不吃碰杠</dt>
+                        <dd class="col-7">
+                          <div class="form-check form-switch">
+                            <input
+                              id="setAutoNoFulu"
+                              class="form-check-input"
+                              type="checkbox"
+                              role="switch"
+                            />
+                          </div>
+                        </dd>
+                        <dt class="col-5">自动摸切</dt>
+                        <dd class="col-7">
+                          <div class="form-check form-switch">
+                            <input
+                              id="setAutoMoQie"
+                              class="form-check-input"
+                              type="checkbox"
+                              role="switch"
+                            />
+                          </div>
+                        </dd>
+                      </dl>
+                    </li>
+                  </ul>
+                </div>
+              </dd>
+              <dt class="col-sm-5">强制打开便捷提示</dt>
+              <dd class="col-sm-7">
+                <div class="form-check form-switch">
+                  <input
+                    id="setbianjietishi"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                  />
+                </div>
+              </dd>
+              <dt class="col-sm-5">获得全部道具</dt>
+              <dd class="col-sm-7">
+                <div class="form-check form-switch">
+                  <input
+                    id="setAllItems"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    data-bs-target="#setItems"
+                    data-bs-toggle="collapse"
+                  />
+                </div>
+                <div id="setItems" class="collapse">
+                  <ul class="list-group">
+                    <li class="list-group-item rounded-3">
+                      <dl
+                        class="row"
+                        style="margin-bottom: calc(-0.5 * var(--bs-gutter-x))"
+                      >
+                        <dt class="col-5">不需要获得的道具ID</dt>
+                        <dd class="col-7">
+                          <textarea
+                            id="ignoreItems"
+                            class="form-control rounded-4 is-valid"
+                            placeholder="使用英文逗号分隔，留空则关闭该功能"
+                          ></textarea>
+                          <div class="invalid-tooltip">输入有误！</div>
+                        </dd>
+                        <dt class="col-5">不获得活动道具</dt>
+                        <dd class="col-7">
+                          <div class="form-check form-switch">
+                            <input
+                              id="ignoreEvent"
+                              class="form-check-input"
+                              type="checkbox"
+                              role="switch"
+                            />
+                          </div>
+                        </dd>
+                      </dl>
+                    </li>
+                  </ul>
+                </div>
+              </dd>
+              <dt class="col-sm-5">随机电脑皮肤</dt>
+              <dd class="col-sm-7">
+                <div class="form-check form-switch">
+                  <input
+                    id="randomBotSkin"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                  />
+                </div>
+              </dd>
+              <dt class="col-sm-5">皮肤ids</dt>
+              <dd class="col-sm-7">
+                <div class="form-check form-switch">
+                  <input
+                    id="skinIds"
+                    type="text"
+                    class="form-control rounded-3"
+                    placeholder="输入皮肤ids,使用英文逗号分隔"
+                  />
+                </div>
+              </dd>
+              <dt class="col-sm-5">随机默认皮肤玩家的皮肤</dt>
+              <dd class="col-sm-7">
+                <div class="form-check form-switch">
+                  <input
+                    id="randomPlayerDefSkin"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                  />
+                </div>
+              </dd>
+              <dt class="col-sm-5">兼容mahjong-helper</dt>
+              <dd class="col-sm-7">
+                <div class="form-check form-switch">
+                  <input
+                    id="sendGame"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    data-bs-target="#sendGameSetting"
+                    data-bs-toggle="collapse"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-question-circle"
+                    viewBox="0 0 16 16"
+                    id="sendGameIcon"
+                  >
+                    <path
+                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    ></path>
+                    <path
+                      d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"
+                    ></path>
+                  </svg>
+                </div>
+                <div id="sendGameSetting" class="collapse">
+                  <ul class="list-group">
+                    <li class="list-group-item rounded-3">
+                      <dl
+                        class="row"
+                        style="margin-bottom: calc(-0.5 * var(--bs-gutter-x))"
+                      >
+                        <dt class="col-5">接收URL</dt>
+                        <dd class="col-7">
+                          <input
+                            id="sendGameURL"
+                            type="text"
+                            class="form-control rounded-4"
+                          />
+                          <div class="invalid-tooltip">输入有误！</div>
+                        </dd>
+                      </dl>
+                    </li>
+                  </ul>
+                </div>
+              </dd>
+              <dt class="col-sm-5">对查看牌谱生效</dt>
+              <dd class="col-sm-7">
+                <div class="form-check form-switch">
+                  <input
+                    id="setPaipuChar"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                  />
+                </div>
+              </dd>
+              <dt class="col-sm-5">显示玩家所在服务器</dt>
+              <dd class="col-sm-7">
+                <div class="form-check form-switch">
+                  <input
+                    id="showServer"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                  />
+                </div>
+              </dd>
+              <dt class="col-sm-5">反屏蔽名称与文本审查</dt>
+              <dd class="col-sm-7">
+                <div class="form-check form-switch">
+                  <input
+                    id="antiCensorship"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                  />
+                </div>
+              </dd>
+              <dt class="col-sm-5">屏蔽挂机检测踢出游戏</dt>
+              <dd class="col-sm-7">
+                <div class="form-check form-switch">
+                  <input
+                    id="antiKickout"
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                  />
+                </div>
+              </dd>
+            </dl>
+          </li>
+          <li class="list-group-item list-group-item-warning">
+            本脚本完全免费开源，如果您是付费获得，意味着您已经被倒卖狗骗了，请立即申请退款并差评！！
+            <br />开源地址： <br />Github:
+            <a
+              href="https://github.com/Avenshy/majsoul_mod_plus"
+              target="_blank"
+              >https://github.com/Avenshy/majsoul_mod_plus</a
+            >
+            <br />GreasyFork:
+            <a
+              href="https://greasyfork.org/zh-CN/scripts/408051-%E9%9B%80%E9%AD%82mod-plus"
+              target="_blank"
+              >https://greasyfork.org/zh-CN/scripts/408051-%E9%9B%80%E9%AD%82mod-plus</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button id="saveSettings" type="button" class="btn btn-success">
+          保存
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          关闭
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="saveSuccess"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">雀魂Mod_Plus</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-success fade show">
+          <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+            <symbol
+              id="check-circle-fill"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+              />
+            </symbol>
+          </svg>
+          <h4 class="alert-heading">
+            <svg
+              class="bi flex-shrink-0 me-2"
+              width="24"
+              height="24"
+              role="img"
+              aria-label="Success:"
+            >
+              <use xlink:href="#check-circle-fill" /></svg
+            >设置保存成功！
+          </h4>
+          <hr />
+          本脚本完全免费开源，如果您是付费获得，意味着您已经被倒卖狗骗了，请立即申请退款并差评！！
+          <br />开源地址： <br />Github:
+          <a
+            href="https://github.com/Avenshy/majsoul_mod_plus"
+            class="alert-link"
+            target="_blank"
+            >https://github.com/Avenshy/majsoul_mod_plus</a
+          >
+          <br />GreasyFork:
+          <a
+            href="https://greasyfork.org/zh-CN/scripts/408051-%E9%9B%80%E9%AD%82mod-plus"
+            class="alert-link"
+            target="_blank"
+            >https://greasyfork.org/zh-CN/scripts/408051-%E9%9B%80%E9%AD%82mod-plus</a
+          >
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
