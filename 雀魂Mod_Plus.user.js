@@ -1303,6 +1303,14 @@ function testAPI() {
                           (L = B["Tools"]["strOfLocalization"](2003)),
                         2 === R["detail_rule"]["ai_level"] &&
                           (L = B["Tools"]["strOfLocalization"](2004)));
+                    const skinIds =
+                      typeof MMP.settings.skinIds == "string"
+                        ? MMP.settings.skinIds
+                            ?.split(",")
+                            .map((item) => parseInt(item, 10))
+                        : MMP.settings.skinIds;
+                    let counter = 0;
+
                     for (
                       var d = B["GameUtility"]["get_default_ai_skin"](),
                         f = B["GameUtility"]["get_default_ai_character"](),
@@ -1340,20 +1348,10 @@ function testAPI() {
                             10
                           );
                           // 配置了皮肤id
-                          console.log(
-                            "MMP.settings.skinIds: ",
-                            MMP.settings.skinIds
-                          );
-                          const skinIds =
-                            typeof MMP.settings.skinIds == "string"
-                              ? MMP.settings.skinIds
-                                  ?.split(",")
-                                  .map((item) => parseInt(item, 10))
-                              : MMP.settings.skinIds;
-                          console.log("skinIds: ", skinIds);
                           if (skinIds && skinIds.length > 0) {
                             all_keys = skinIds;
-                            rand_skin_id = V % skinIds.length;
+                            rand_skin_id = counter % skinIds.length;
+                            counter++;
                           }
                           let skin =
                             cfg.item_definition.skin.map_[
